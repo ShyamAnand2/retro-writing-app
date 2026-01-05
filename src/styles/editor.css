@@ -1,0 +1,131 @@
+/* EDITOR STYLES: Customizes react-quill editor with retro theme */
+
+.editor-container {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  overflow: hidden;
+}
+
+/* Toolbar Styles */
+.toolbar {
+  background: var(--retro-bg);
+  border: 2px solid var(--retro-border);
+  border-bottom: 3px solid var(--retro-dark);
+  padding: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+.toolbar select,
+.toolbar button {
+  padding: 6px 10px;
+  background: white;
+  border: 2px outset var(--retro-light);
+  font-family: inherit;
+  font-size: 12px;
+  cursor: pointer;
+  font-weight: bold;
+  min-width: 32px;
+}
+
+.toolbar button:hover {
+  background: var(--retro-light);
+}
+
+.toolbar button:active,
+.toolbar button.ql-active {
+  border-style: inset;
+  background: var(--accent-teal);
+  color: white;
+}
+
+.toolbar select {
+  padding: 4px 8px;
+}
+
+/* Quill Editor Customization */
+.ql-container {
+  flex: 1;
+  overflow-y: auto;
+  font-family: 'Georgia', 'Times New Roman', serif;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.ql-editor {
+  padding: 20px;
+  min-height: 100%;
+}
+
+.ql-editor:focus {
+  outline: none;
+}
+
+/* Override Quill's default toolbar (we use custom one) */
+.ql-toolbar {
+  display: none !important;
+}
+
+/* Placeholder styling */
+.ql-editor.ql-blank::before {
+  color: var(--retro-border);
+  font-style: italic;
+  font-family: 'Courier New', monospace;
+}
+
+/* Link styling in editor */
+.ql-editor a {
+  color: var(--accent-teal);
+  text-decoration: underline;
+}
+
+/* Headings in editor */
+.ql-editor h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+  font-weight: bold;
+}
+
+.ql-editor h2 {
+  font-size: 1.5em;
+  margin: 0.75em 0;
+  font-weight: bold;
+}
+
+/* Lists in editor */
+.ql-editor ul,
+.ql-editor ol {
+  padding-left: 1.5em;
+}
+
+/* Blockquotes */
+.ql-editor blockquote {
+  border-left: 4px solid var(--retro-border);
+  padding-left: 16px;
+  margin: 16px 0;
+  color: var(--retro-dark);
+  font-style: italic;
+}
+
+/* Code blocks */
+.ql-editor pre {
+  background: var(--retro-bg);
+  border: 2px inset var(--retro-border);
+  padding: 12px;
+  overflow-x: auto;
+  font-family: 'Courier New', monospace;
+}
+
+/* Selection color */
+.ql-editor ::selection {
+  background: var(--accent-pink);
+  color: white;
+}
+
+/* Retro cursor effect */
+.ql-editor {
+  caret-color: var(--accent-teal);
+}

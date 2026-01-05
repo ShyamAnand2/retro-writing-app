@@ -1,0 +1,386 @@
+/* RETRO THEME: Old-school Mac/Windows 95 inspired design */
+
+/* CSS Variables for easy color theming */
+:root {
+  --retro-bg: #c0c0c0;
+  --retro-border: #808080;
+  --retro-light: #dfdfdf;
+  --retro-dark: #404040;
+  --retro-shadow: #000000;
+  --accent-teal: #00b8b8;
+  --accent-pink: #ff69b4;
+  --text-primary: #000000;
+}
+
+/* Global reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Courier New', 'Chicago', monospace;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: var(--text-primary);
+  min-height: 100vh;
+}
+
+/* Retro Window Component Styles */
+.retro-window {
+  background: var(--retro-bg);
+  border: 2px solid var(--retro-light);
+  border-right-color: var(--retro-dark);
+  border-bottom-color: var(--retro-dark);
+  box-shadow: 4px 4px 0px var(--retro-shadow);
+  border-radius: 0;
+  overflow: hidden;
+}
+
+.window-header {
+  background: linear-gradient(180deg, var(--retro-light) 0%, var(--retro-border) 100%);
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  border-bottom: 2px solid var(--retro-dark);
+}
+
+.window-buttons {
+  display: flex;
+  gap: 6px;
+  margin-right: 12px;
+}
+
+.window-buttons span {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 12px;
+  line-height: 14px;
+  text-align: center;
+}
+
+.btn-close {
+  background: #ff5f57;
+  color: #8b0000;
+}
+
+.btn-minimize {
+  background: #ffbd2e;
+  color: #8b6914;
+}
+
+.btn-maximize {
+  background: #28c840;
+  color: #0a5f1e;
+}
+
+.window-title {
+  flex: 1;
+  text-align: center;
+  font-weight: bold;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.window-content {
+  padding: 16px;
+  background: white;
+  min-height: 300px;
+}
+
+/* Login Page Styles */
+.login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.login-page .retro-window {
+  width: 100%;
+  max-width: 400px;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group label {
+  font-weight: bold;
+  font-size: 13px;
+}
+
+.form-group input {
+  padding: 10px;
+  border: 2px inset var(--retro-border);
+  font-family: inherit;
+  font-size: 14px;
+  background: white;
+}
+
+.form-group input:focus {
+  outline: 2px solid var(--accent-teal);
+  outline-offset: -2px;
+}
+
+.error-message {
+  background: #ffcccc;
+  border: 2px solid #cc0000;
+  padding: 10px;
+  color: #cc0000;
+  font-weight: bold;
+  text-align: center;
+}
+
+.btn-primary {
+  padding: 12px;
+  background: var(--accent-teal);
+  border: 2px outset var(--retro-light);
+  color: white;
+  font-weight: bold;
+  font-family: inherit;
+  font-size: 14px;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.btn-primary:hover {
+  background: #009999;
+}
+
+.btn-primary:active {
+  border-style: inset;
+}
+
+.btn-primary:disabled {
+  background: var(--retro-border);
+  cursor: not-allowed;
+}
+
+.toggle-form {
+  text-align: center;
+  font-size: 13px;
+}
+
+.toggle-form span {
+  color: var(--accent-teal);
+  cursor: pointer;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+/* Home Page Layout */
+.home-page {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.sidebar {
+  width: 280px;
+  background: var(--retro-bg);
+  border-right: 4px solid var(--retro-dark);
+  display: flex;
+  flex-direction: column;
+}
+
+.user-info {
+  padding: 16px;
+  background: var(--retro-light);
+  border-bottom: 2px solid var(--retro-border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.btn-logout {
+  padding: 6px 12px;
+  background: var(--accent-pink);
+  border: 2px outset var(--retro-light);
+  color: white;
+  font-family: inherit;
+  font-size: 11px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.btn-logout:hover {
+  background: #ff1493;
+}
+
+.main-content {
+  flex: 1;
+  padding: 20px;
+  overflow: auto;
+}
+
+.main-content .retro-window {
+  height: calc(100vh - 40px);
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content .window-content {
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Document List Styles */
+.document-list {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.list-header {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid var(--retro-border);
+}
+
+.list-header h3 {
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+.btn-new-doc {
+  padding: 6px 12px;
+  background: var(--accent-teal);
+  border: 2px outset var(--retro-light);
+  color: white;
+  font-family: inherit;
+  font-size: 12px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.doc-items {
+  flex: 1;
+  overflow-y: auto;
+  padding: 8px;
+}
+
+.doc-item {
+  padding: 12px;
+  margin-bottom: 8px;
+  background: white;
+  border: 2px solid var(--retro-border);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.doc-item:hover {
+  background: var(--retro-light);
+}
+
+.doc-item.active {
+  background: var(--accent-teal);
+  color: white;
+  border-color: var(--accent-teal);
+}
+
+.doc-info h4 {
+  font-size: 13px;
+  margin-bottom: 4px;
+}
+
+.doc-date {
+  font-size: 11px;
+  opacity: 0.7;
+}
+
+.btn-delete {
+  background: transparent;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.btn-delete:hover {
+  transform: scale(1.2);
+}
+
+.empty-state {
+  text-align: center;
+  padding: 32px 16px;
+  color: var(--retro-border);
+  font-style: italic;
+}
+
+/* Document Header */
+.document-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--retro-border);
+  margin-bottom: 12px;
+}
+
+.title-input {
+  flex: 1;
+  padding: 8px;
+  border: 2px inset var(--retro-border);
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.save-indicator {
+  font-size: 12px;
+  color: var(--retro-border);
+  margin-left: 12px;
+}
+
+/* Loading state */
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+}
+
+/* Scrollbar styling (retro look) */
+::-webkit-scrollbar {
+  width: 16px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--retro-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--retro-border);
+  border: 2px outset var(--retro-light);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--retro-dark);
+}
